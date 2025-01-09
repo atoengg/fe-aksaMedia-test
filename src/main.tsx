@@ -6,15 +6,18 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { AuthProvider } from './context/AuthContext.tsx';
 import { Provider } from 'react-redux';
 import { store } from './store/index.ts';
+import { ThemeProvider } from './context/ThemeContext.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <AuthProvider>
-      <Router>
-        <Provider store={store}>
-          <App />
-        </Provider>
-      </Router> 
-    </AuthProvider>
+    <ThemeProvider>
+      <AuthProvider>
+        <Router>
+          <Provider store={store}>
+            <App />
+          </Provider>
+        </Router>
+      </AuthProvider>
+    </ThemeProvider>
   </StrictMode>,
 )
