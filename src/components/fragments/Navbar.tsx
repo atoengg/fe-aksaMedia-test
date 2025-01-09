@@ -31,7 +31,7 @@ export default function Navbar({ titlePage }: Props) {
 
     return (
         <nav className="flex justify-between w-full items-center">
-            <h2 className={`text-2xl font-bold ${theme === 'dark' || (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches) ? 'text-white' : ''}`}>{dynamicTitle}</h2>
+            <h2 className={`text-lg md:text-2xl font-bold ${theme === 'dark' || (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches) ? 'text-white' : ''}`}>{dynamicTitle}</h2>
 
             <div className="flex flex-row gap-4">
                 <div className={`flex items-center gap-1 cursor-pointer ${theme === 'dark' || (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches) ? 'text-white' : ''}`} onClick={() => toggleDropdown('logout')}>

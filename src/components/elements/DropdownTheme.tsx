@@ -11,7 +11,7 @@ export function DropdownTheme({ isOpen }: DropdownThemeProps) {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div className={`absolute p-2 rounded-2xl top-14 right-2 w-32 border ${theme === "dark" || (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "bg-[#0B192C] border-indigo-950 shadow text-white" : "bg-white border-indigo-300 shadow"}`}>
+    <div className={`absolute z-10 p-2 rounded-2xl top-14 right-2 w-32 border ${theme === "dark" || (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "bg-[#0B192C] border-indigo-950 shadow text-white" : "bg-white border-indigo-300 shadow"}`}>
       <ul className="flex flex-col">
         <li
           onClick={() => setTheme("light")}
