@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react"
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { useTheme } from "../../context/ThemeContext";
 
 
 export const FormLogin = () => {
     const { login, isAuthenticated } = useAuth();
     const navigate = useNavigate();
+    const { theme } = useTheme();
 
     const [input, setInput] = useState({
         username: '',
@@ -91,7 +93,7 @@ export const FormLogin = () => {
         <>
             <form action="" onSubmit={handleSubmit}>
                 <div className="">
-                    <label htmlFor="username" className="font-semibold text-sm">
+                    <label htmlFor="username" className={`font-semibold text-sm ${theme === 'dark' || (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches) ? 'text-white' : ''}`}>
                         Username
                     </label>
                     <input required type="username" name="username" id="username" placeholder="Masukan username anda" value={input.username} onChange={handleInputLogin} className={`w-full text-sm px-3 py-2 rounded-lg border-solid mt-1 border mb-2 ${errMsg.username ? 'border-red-500' : 'border-teal-500'} focus:outline-none`} />
@@ -102,7 +104,7 @@ export const FormLogin = () => {
 
                 <div className="">
 
-                    <label htmlFor="password" className="font-semibold text-sm">
+                    <label htmlFor="password" className={`font-semibold text-sm ${theme === 'dark' || (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches) ? 'text-white' : ''}`}>
                         Password
                     </label>
                     <input required type="password" name="password" id="password" placeholder="Masukan password" value={input.password} onChange={handleInputLogin} className={`w-full text-sm px-3 py-2 rounded-lg border-solid mt-1 border mb-2 ${errMsg.password ? 'border-red-500' : 'border-teal-500'} focus:outline-none`} />
