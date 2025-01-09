@@ -3,6 +3,8 @@ import { BsCaretDownFill, BsMoonStarsFill } from "react-icons/bs";
 import { useLocation } from "react-router-dom";
 import { DropdownTheme } from "../elements/DropdownTheme";
 import { DropdownLogout } from "../elements/DropdownLogout";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store";
 
 type Props = {
     titlePage?: string;
@@ -10,6 +12,7 @@ type Props = {
 
 export default function Navbar({ titlePage }: Props) {
     const location = useLocation();
+    const username = useSelector((state: RootState) => state.user.username);
     const [activeDropdown, setActiveDropdown] = useState<"theme" | "logout" | null>(null);
 
     const pageTitles: Record<string, string> = {
@@ -30,7 +33,7 @@ export default function Navbar({ titlePage }: Props) {
 
             <div className="flex flex-row gap-4">
                 <div className="flex items-center gap-1 cursor-pointer" onClick={() => toggleDropdown('logout')}>
-                    <p className="font-semibold text-sm md:text-lg">hi, Irham</p>
+                    <p className="font-semibold text-sm md:text-lg">hi, {username}</p>
                     <BsCaretDownFill className="w-3 h-3" />
                 </div>
 
