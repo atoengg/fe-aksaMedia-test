@@ -5,6 +5,7 @@ import { Users } from "../pages/Users"
 import { PrivateRoute } from "./PrivateRoute"
 import { SettingsPage } from "../pages/Settings"
 import { UserForm } from "../components/fragments/useForm"
+import { NotFound } from "../pages/NotFound"
 
 
 export const Routers = () => {
@@ -31,6 +32,10 @@ export const Routers = () => {
                 <Route path="/users/edit/:id" element={
                     <PrivateRoute>
                         <UserForm />
+                    </PrivateRoute>} />
+                <Route path="*" element={
+                    <PrivateRoute>
+                        <NotFound />
                     </PrivateRoute>} />
             </Routes>
         </>

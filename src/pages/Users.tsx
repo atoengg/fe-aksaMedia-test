@@ -62,10 +62,10 @@ export const Users = () => {
 
   return (
     <Layout>
-      <div className={`flex items-center justify-between px-3 py-4 ${theme === 'dark' || (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches) ? 'bg-[#1A1A1D] shadow-gray-800' : 'bg-gray-50'}`}>
+      <div className={`flex items-center justify-between px-3 py-4 rounded-t-lg ${theme === 'dark' || (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches) ? 'bg-[#1A1A1D] shadow-gray-800' : 'bg-gray-50'}`}>
         <p className={`font-semibold text-[16px] md:text-lg whitespace-nowrap ${theme === 'dark' || (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches) ? 'text-white' : ''}`}>Data User</p>
 
-        <div className="flex flex-row items-center gap-4 ">
+        <div className="flex flex-row items-center gap-4">
           <div className="relative">
             <input
               type="text"

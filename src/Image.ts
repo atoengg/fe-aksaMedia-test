@@ -4,6 +4,7 @@ import iconUser from './assets/icon-user.svg'
 import iconMale from './assets/icon-male.png'
 import iconFemale from './assets/icon-female.png'
 import iconWedding from './assets/icon-wedding.png'
+import imgNotFound from './assets/not-found.png'
 
 export{
     logoAksamedia,
@@ -11,5 +12,6 @@ export{
     iconUser,
     iconMale,
     iconFemale,
-    iconWedding
+    iconWedding,
+    imgNotFound
 }
