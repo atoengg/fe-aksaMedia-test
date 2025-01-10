@@ -39,10 +39,17 @@ export default function Navbar({ titlePage }: Props) {
         "/users": "Users",
         "/settings": "Settings",
         "/users/add": "Tambah User",
-        "/users/edit/:id": "Edit User",
+        "/users/edit": "Edit User",
     };
 
-    const dynamicTitle = titlePage || pageTitles[location.pathname] || "Edit User";
+    const getDynamicTitle = (path: string): string => {
+        if (path.startsWith("/users/edit/")) {
+            return "Edit User"; // Path dinamis
+        }
+        return pageTitles[path] || "Not Found"; // Default
+    };
+
+    const dynamicTitle = titlePage || getDynamicTitle(location.pathname);
 
     const themeIcon =
         theme === "system"
