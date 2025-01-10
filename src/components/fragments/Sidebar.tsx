@@ -22,12 +22,12 @@ export const Sidebar = () => {
                 {SIDEBAR.map((item) => (
                     <li
                         key={item.id}
-                        className={`font-medium rounded-md py-2 px-5 cursor-pointer hover:bg-gray-100 hover:text-indigo-500 ${location.pathname === item.path ? 'bg-indigo-500 text-white' : ''
+                        className={`font-medium rounded-md py-2 px-2 md:px-5 cursor-pointer hover:bg-gray-100 hover:text-indigo-500 ${location.pathname === item.path ? 'bg-indigo-500 text-white' : ''
                             } ${theme === 'dark' || (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches) ? 'text-white' : ""}`}
                     >
                         <Link
                             to={item.path}
-                            className="flex items-center md:justify-start md:space-x-5"
+                            className="flex items-center md:space-x-5"
                         >
                             <span>{item.icon}</span>
                             <span className="text-sm hidden md:flex">{item.title}</span>
