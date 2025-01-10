@@ -21,9 +21,11 @@ export default function Navbar({ titlePage }: Props) {
         "/dashboard": "Dashboard",
         "/users": "Users",
         "/settings": "Settings",
+        "/users/add": "Tambah User",
+        "/users/edit/:id": "Edit User",
     };
 
-    const dynamicTitle = titlePage || pageTitles[location.pathname] || "Untitled Page";
+    const dynamicTitle = titlePage || pageTitles[location.pathname] || "Edit User";
 
     const toggleDropdown = (dropdown: "theme" | "logout") => {
         setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
