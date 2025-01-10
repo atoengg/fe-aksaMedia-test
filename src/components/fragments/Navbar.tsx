@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { BsCaretDownFill, BsMoonStarsFill } from "react-icons/bs";
+import { useEffect, useState } from "react";
+import { BsCaretDownFill, BsMoonStarsFill, BsSunFill } from "react-icons/bs";
 import { useLocation } from "react-router-dom";
 import { DropdownTheme } from "../elements/DropdownTheme";
 import { DropdownLogout } from "../elements/DropdownLogout";
@@ -16,6 +16,23 @@ export default function Navbar({ titlePage }: Props) {
     const username = useSelector((state: RootState) => state.user.username);
     const { theme } = useTheme()
     const [activeDropdown, setActiveDropdown] = useState<"theme" | "logout" | null>(null);
+    const [systemTheme, setSystemTheme] = useState<"light" | "dark">("light");
+
+    useEffect(() => {
+        const matchDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+        const handleSystemThemeChange = () => {
+            setSystemTheme(matchDark.matches ? "dark" : "light");
+        };
+
+        // Set initial system theme
+        handleSystemThemeChange();
+
+        // Listen for changes
+        matchDark.addEventListener("change", handleSystemThemeChange);
+
+        return () => matchDark.removeEventListener("change", handleSystemThemeChange);
+    }, []);
 
     const pageTitles: Record<string, string> = {
         "/dashboard": "Dashboard",
@@ -26,6 +43,15 @@ export default function Navbar({ titlePage }: Props) {
     };
 
     const dynamicTitle = titlePage || pageTitles[location.pathname] || "Edit User";
+
+    const themeIcon =
+        theme === "system"
+            ? systemTheme === "dark"
+                ? <BsMoonStarsFill />
+                : <BsSunFill />
+            : theme === "dark"
+                ? <BsMoonStarsFill />
+                : <BsSunFill />;
 
     const toggleDropdown = (dropdown: "theme" | "logout") => {
         setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
@@ -42,7 +68,7 @@ export default function Navbar({ titlePage }: Props) {
                 </div>
 
                 <div className={`flex items-center gap-1 cursor-pointer border-l ${theme === 'dark' || (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches) ? 'border-white text-white' : 'border-black'} pl-4`} onClick={() => toggleDropdown('theme')}>
-                    <BsMoonStarsFill />
+                    {themeIcon}
                     <BsCaretDownFill className="w-3 h-3" />
                 </div>
             </div>
