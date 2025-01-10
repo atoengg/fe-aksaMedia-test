@@ -19,7 +19,7 @@ export function DropdownLogout({ isOpen }: DropdownLogoutProps) {
   }
 
   return (
-    <div className={`absolute z-10 px-4 py-2 rounded-2xl top-14 right-20 text-center w-32 border ${theme === "dark" || (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "bg-[#0B192C] border-indigo-950 shadow text-white" : "bg-white border-indigo-300 shadow"} border-indigo-300 bg-white`}>
+    <div className={`absolute z-10 px-4 py-2 rounded-2xl top-14 right-20 text-center w-32 border ${theme === "dark" || (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "bg-[#0B192C] border-indigo-950 shadow text-white" : "bg-white border-indigo-300 shadow"} border-indigo-300`}>
       <button type="button" onClick={handleLogout} className="text-red-500 font-semibold">Logout</button>
     </div>
   );

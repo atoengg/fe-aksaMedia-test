@@ -22,7 +22,7 @@ export const Sidebar = () => {
                 {SIDEBAR.map((item) => (
                     <li
                         key={item.id}
-                        className={`font-medium rounded-md py-2 px-5 hover:bg-gray-100 hover:text-indigo-500 ${location.pathname === item.path ? 'bg-indigo-500 text-white' : ''
+                        className={`font-medium rounded-md py-2 px-5 cursor-pointer hover:bg-gray-100 hover:text-indigo-500 ${location.pathname === item.path ? 'bg-indigo-500 text-white' : ''
                             } ${theme === 'dark' || (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches) ? 'text-white' : ""}`}
                     >
                         <Link

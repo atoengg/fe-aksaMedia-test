@@ -15,7 +15,7 @@ export function DropdownTheme({ isOpen }: DropdownThemeProps) {
       <ul className="flex flex-col">
         <li
           onClick={() => setTheme("light")}
-          className={`flex items-center px-4 gap-2 cursor-pointer hover:bg-indigo-500 hover:text-white rounded-lg py-1 ${theme === "light"  ? "bg-indigo-500 text-white" : ""
+          className={`flex items-center px-4 gap-2 cursor-pointer hover:bg-indigo-500 hover:text-white rounded-lg py-1 ${theme === "light" ? "bg-indigo-500 text-white" : ""
             }`}>
           <BsSunFill className="w-4 h-4" />
           <p className="text-sm">Light</p>
