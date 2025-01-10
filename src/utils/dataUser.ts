@@ -1,0 +1,50 @@
+export const dataUser = [
+    {
+        id: 1,
+        namaLengkap: "Agus Buntung",
+        jenisKelamin: "Laki-laki",
+        alamat: "Siwalan, Gresik",
+        status: "Lajang",
+    }, {
+        id: 2,
+        namaLengkap: "Budi Jatmiko",
+        jenisKelamin: "Laki-laki",
+        alamat: "Cempaka, Jakarta",
+        status: "Menikah",
+    },
+    {
+        id: 3,
+        namaLengkap: "Citra Dewi",
+        jenisKelamin: "Perempuan",
+        alamat: "Sukodono, Sidoarjo",
+        status: "Lajang",
+    },
+    {
+        id: 4,
+        namaLengkap: "Dinda Permata",
+        jenisKelamin: "Perempuan",
+        alamat: "Tanjung Duren, Jakarta",
+        status: "Menikah",
+    },
+    {
+        id: 5,
+        namaLengkap: "Budi Jatmiko",
+        jenisKelamin: "Laki-laki",
+        alamat: "Cempaka, Jakarta",
+        status: "Menikah",
+      },
+      {
+        id: 6,
+        namaLengkap: "Citra Dewi",
+        jenisKelamin: "Perempuan",
+        alamat: "Sukodono, Sidoarjo",
+        status: "Lajang",
+      },
+      {
+        id: 7,
+        namaLengkap: "Dinda Permata",
+        jenisKelamin: "Perempuan",
+        alamat: "Tanjung Duren, Jakarta",
+        status: "Menikah",
+      },
+]

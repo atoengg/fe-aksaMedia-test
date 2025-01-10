@@ -9,7 +9,7 @@ export const Sidebar = () => {
 
 
     return (
-        <div className={`w-16 md:w-56 fixed left-0 top-0 h-screen z-10 border-r pt-8 px-4 ${theme === 'dark' || (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches) ? 'bg-[#1A1A1D] border-r-[#1A1A1D]' : 'bg-white'}`}>
+        <div className={`w-16 min-h-screen bottom-0 md:w-56 fixed left-0 top-0 z-10 border-r pt-8 px-4 ${theme === 'dark' || (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches) ? 'bg-[#1A1A1D] border-r-[#1A1A1D]' : 'bg-white'}`}>
             <div className="mb-8">
                 <div className="flex items-center gap-3">
                     <img src={logoAksamedia} alt="logo-img" className="w-10 hidden md:flex" />

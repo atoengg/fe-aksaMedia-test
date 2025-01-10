@@ -4,6 +4,7 @@ import { Dashboard } from "../pages/Dashboard"
 import { Users } from "../pages/Users"
 import { PrivateRoute } from "./PrivateRoute"
 import { SettingsPage } from "../pages/Settings"
+import { UserForm } from "../components/fragments/useForm"
 
 
 export const Routers = () => {
@@ -22,6 +23,14 @@ export const Routers = () => {
                 <Route path="/settings" element={
                     <PrivateRoute>
                         <SettingsPage />
+                    </PrivateRoute>} />
+                <Route path="/users/add" element={
+                    <PrivateRoute>
+                        <UserForm />
+                    </PrivateRoute>} />
+                <Route path="/users/edit/:id" element={
+                    <PrivateRoute>
+                        <UserForm />
                     </PrivateRoute>} />
             </Routes>
         </>
